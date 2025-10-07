@@ -87,13 +87,23 @@ void push()
 	cin >> novo->valor;
 	novo->prox = NULL;
 
+	novo->prox = topo;
+	topo = novo;
+	cout << "Elemento " << topo->valor << " inserido no topo da lista" << endl;
+
+
 
 }
 
 void pop()
 {
-
-	
-
+	if (topo == NULL) {
+		cout << "Pilha Vazia!" << endl;
+		return;
+	}
+	NO* aux = topo;
+	cout << "O valor removido e: " << aux->valor << endl;
+	topo = topo->prox;
+	free(aux);
 }
 
